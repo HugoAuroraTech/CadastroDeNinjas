@@ -29,4 +29,8 @@ public class NinjaService {
         return ninjaPorId.orElse(null);
     }
 
+    public void deletarNinjaPorId(Long id){
+        this.ninjaRepository.deleteById(id);
+    }
+
 }

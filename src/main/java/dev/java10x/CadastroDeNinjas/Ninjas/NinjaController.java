@@ -28,4 +28,9 @@ public class NinjaController {
     public NinjaModel listarNinjaPorId(@PathVariable Long id) {
         return this.ninjaService.listarNinjaPorId(id);
     }
+
+    @GetMapping("/deletar/{id}")
+    public void deletarNinjaPorId(@PathVariable Long id) {
+        this.ninjaService.deletarNinjaPorId(id);
+    }
 }
