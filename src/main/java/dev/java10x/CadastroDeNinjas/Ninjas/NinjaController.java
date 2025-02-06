@@ -15,7 +15,7 @@ public class NinjaController {
     }
 
     @PostMapping("/criar")
-    public NinjaModel criarNinja(@RequestBody NinjaModel ninja){
+    public NinjaDTO criarNinja(@RequestBody NinjaDTO ninja){
         return this.ninjaService.criarNinja(ninja);
     }
 
@@ -27,6 +27,11 @@ public class NinjaController {
     @GetMapping("/listar/{id}")
     public NinjaModel listarNinjaPorId(@PathVariable Long id) {
         return this.ninjaService.listarNinjaPorId(id);
+    }
+
+    @PutMapping("/alterar/{id}")
+    public NinjaModel atualizarNinja(@PathVariable Long id, @RequestBody NinjaModel ninjaAtualizado){
+        return this.ninjaService.atualizarNinja(id, ninjaAtualizado);
     }
 
     @GetMapping("/deletar/{id}")
