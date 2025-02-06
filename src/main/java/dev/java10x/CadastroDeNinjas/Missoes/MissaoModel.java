@@ -22,7 +22,7 @@ public class MissaoModel {
     private String nome;
     private String rank;
 
-    @OneToMany(mappedBy = "missoes")
+    @OneToMany(mappedBy = "missoes", cascade = CascadeType.ALL)
     @JsonIgnore
     private List<NinjaModel> ninjaModel;
 
